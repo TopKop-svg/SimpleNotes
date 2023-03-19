@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Dog Test</string>
+    <string name="next_image">Next Image</string>
+    <string name="internet_fail">Соединение с интернетом отсутствует</string>
+</resources>
