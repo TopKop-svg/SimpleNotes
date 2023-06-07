@@ -1,0 +1,39 @@
+package com.example.levelapp0006v1.WorkWithNotes;
+
+import androidx.room.Entity;
+import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
+
+
+@Entity
+public class Note {
+    @PrimaryKey(autoGenerate = true)
+    private int id;
+
+    private String text;
+
+    private int priority;
+
+    public int getId() {
+        return id;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public int getPriority() {
+        return priority;
+    }
+
+    public Note(int id, String text, int priority) {
+        this.id = id;
+        this.text = text;
+        this.priority = priority;
+    }
+    @Ignore
+    public Note(String text, int priority) {
+        this.text = text;
+        this.priority = priority;
+    }
+}

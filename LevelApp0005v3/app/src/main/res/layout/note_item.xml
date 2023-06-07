@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:cardUseCompatPadding="true"
+    app:cardCornerRadius="8dp"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_gravity="fill"
+    android:layout_columnWeight="1"
+    android:layout_rowWeight="1"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/imageViewPlay"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:adjustViewBounds="true"
+            android:foregroundGravity="center"
+
+            android:src="@drawable/play_icon_152559"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="10dp"
+            tools:layout_editor_absoluteY="8dp"
+             />
+
+        <TextView
+            android:id="@+id/textViewRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="64dp"
+            android:background="#80000000"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints"
+            tools:text="Text Note" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="124dp"
+            android:layout_height="122dp"
+            android:text="Текст введенный в заметке подразумевает
+            свод правил и уточнений, благодоря которым можно в полной
+            степени понять что необходимо сделать"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewPlay" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
