@@ -18,8 +18,9 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
     private LinearLayout linearLayout, linearLayoutFinishNotes;
     private FloatingActionButton buttonAddNote;
-    private ArrayList<Note> notes = new ArrayList<>();
-    private  ArrayList<Note> notesFinish = new ArrayList<>();
+
+    private Database database = Database.getInstance();
+    //private  ArrayList<Note> notesFinish = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,11 +30,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        for (int i = 0; i < 10; i++) {
-            Note note = new Note(i, "Note " + i, "Non empty field \n" +
-                    " just field note be empty");
-            notes.add(note);
-        }
 
         buttonAddNote.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,44 +39,49 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        showNotes();
+
     }
 
     private void initViews() {
         linearLayout = findViewById(R.id.linearLayoutNotes);
-        linearLayoutFinishNotes = findViewById(R.id.linearLayoutFinishNotes);
+        //linearLayoutFinishNotes = findViewById(R.id.linearLayoutFinishNotes);
         buttonAddNote = findViewById(R.id.buttonAddNote);
     }
 
+    @Override
+    protected void onResume() {
+        showNotes();
+        super.onResume();
+    }
+
     private void showNotes() {
-        for (Note note: notes) {
+        linearLayout.removeAllViews();
+        for (Note note: database.getNotes()) {
             View view = getLayoutInflater().inflate(R.layout.note_item,
                     linearLayout,
                     false);
             CheckBox checkBox = view.findViewById(R.id.checkBoxNote);
             checkBox.setText(note.getTitle());
-            checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            /*checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                     if (isChecked) {
                         readyNote(note);
                     }
                 }
-            });
-
+            });*/
 
             TextView textView = view.findViewById(R.id.textViewExplanation);
             textView.setText(note.getText());
-            linearLayout.addView(view);
-        }
+            linearLayout.addView(view);        }
     }
 
-    private void readyNote(Note note) {
+    /*private void readyNote(Note note) {
             notesFinish.add(note);
             notes.remove(note);
             View view = getLayoutInflater().inflate(R.layout.note_item,
                     linearLayoutFinishNotes,
                     false);
             linearLayoutFinishNotes.addView(view);
-    }
+    }*/
 }

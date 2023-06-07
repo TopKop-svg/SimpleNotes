@@ -11,6 +11,7 @@ import android.widget.EditText;
 
 public class AddNoteActivity extends AppCompatActivity {
     private Button buttonSave;
+    private Database database = Database.getInstance();
     EditText editTextTitle, editTextExp;
 
     @Override
@@ -28,9 +29,16 @@ public class AddNoteActivity extends AppCompatActivity {
 
     }
 
+
+
     private void saveNote() {
         String title = editTextTitle.getText().toString().trim();
         String text = editTextExp.getText().toString().trim();
+        int id = database.getNotes().size();
+        Note note = new Note(id, title, text);
+        database.add(note);
+
+        finish();
     }
 
     private void initViews() {
