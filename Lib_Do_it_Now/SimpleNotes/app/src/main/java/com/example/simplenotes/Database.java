@@ -16,12 +16,17 @@ public class Database {
     private  Database() {
         for (int i = 0; i < 10; i++) {
             Note note = new Note(i, "Note " + i, "Non empty field \n" +
-                    " just field note be empty");
+                    " just field note be empty", 100);
             notes.add(note);
         }
     }
 
     public void add(Note note) {
+        /*for(Note n: notes) {
+            if (note.getTitle().equals(n.getTitle())) {
+                Database.instance.remove(n.getId());
+            }
+        }*/
         notes.add(note);
     }
 

@@ -4,6 +4,89 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/checkNote"
     android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/checkbox_gradient"
+    android:layout_margin="8dp"
+    >
+
+
+    <CheckBox
+        android:id="@+id/checkBoxNote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="24dp"
+        android:text="Название заметки"
+        android:textSize="18dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewExplanation"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:padding="5dp"
+        android:text="Текст для конретной заметки"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxNote">
+
+    </TextView>
+
+    <Button
+        android:id="@+id/buttonOption"
+        android:layout_width="54dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="V"
+        android:backgroundTint="#954747"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayoutTimer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        app:layout_constraintTop_toBottomOf="@+id/textViewExplanation"
+        tools:layout_editor_absoluteX="16dp">
+
+        <Button
+            android:id="@+id/buttonPlay"
+            android:layout_width="61dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="16dp"
+            android:textSize="10dp"
+            android:text="play"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="113dp" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="281dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_marginEnd="41dp"
+            android:scrollbarSize="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.47"
+            app:layout_constraintStart_toEndOf="@+id/button"
+            tools:layout_editor_absoluteY="113dp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/checkNote"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/checkbox_gradient"
     android:layout_margin="8dp"
@@ -22,12 +105,37 @@
         android:id="@+id/textViewExplanation"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:padding="5dp"
-        android:textSize="15dp"
         android:text="Текст для конретной заметки"
+        android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/checkBoxNote">
 
     </TextView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="61dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="16dp"
+        android:text="Button"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="113dp" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="247dp"
+        android:layout_height="30dp"
+        android:layout_margin="10dp"
+        android:layout_marginEnd="41dp"
+        android:scrollbarSize="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toEndOf="@+id/button"
+        tools:layout_editor_absoluteY="113dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>-->

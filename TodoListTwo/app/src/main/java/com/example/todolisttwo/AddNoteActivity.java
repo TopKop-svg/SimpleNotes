@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 
 public class AddNoteActivity extends AppCompatActivity {
+    private Database database = Database.getInstance();
     private EditText editTextNote;
     private Button buttonSave;
     private RadioButton radioButtonLow, radioButtonMedium, radioButtonHigh;
@@ -42,6 +43,12 @@ public class AddNoteActivity extends AppCompatActivity {
     private void saveNote() {
         String text = editTextNote.getText().toString().trim();
         int priority = getPriority();
+        int id = database.getNotes().size();
+
+        Note note = new Note(id, text, priority);
+        database.add(note);
+
+        finish();
     }
 
     private int getPriority() {
